@@ -1,0 +1,31 @@
+id,category,question,expected_behavior,acceptable_source_keyword,notes
+1,factual_retrieval,What mechanism does Clene's CNM-Au8 use?,retrieval_mentions:nanocrystal,clene,Tests basic program-fact retrieval
+2,factual_retrieval,What is MediciNova's lead ALS drug called?,retrieval_mentions:ibudilast,medicinova,
+3,factual_retrieval,What is Biogen's ticker symbol?,retrieval_mentions:BIIB,biogen,Ticker is a company-table fact not currently in the claims corpus -- expected to test whether retrieval covers it
+4,factual_retrieval,What is BrainStorm's lead program called?,retrieval_mentions:NurOwn,brainstorm,
+5,factual_retrieval,What modality is Amylyx's AMX0114?,retrieval_mentions:oligonucleotide,amylyx,
+6,factual_retrieval,Who sponsors the COMBAT-ALS trial?,retrieval_mentions:MediciNova,medicinova,
+7,company_comparison,How do Biogen and Amylyx's regulatory histories differ?,retrieval_mentions:accelerated approval,biogen;amylyx,Should surface both companies' claims
+8,company_comparison,Which companies have disclosed a going-concern doubt?,retrieval_mentions:going concern,brainstorm;clene,Should surface BrainStorm and Clene specifically
+9,company_comparison,How does Clene's cash position compare to MediciNova's?,retrieval_mentions:cash,clene;medicinova,
+10,company_comparison,Which company's trial is closest to reporting results?,retrieval_mentions:end of 2026,medicinova,COMBAT-ALS topline expected end of 2026
+11,trial_phase_status,What phase is the COMBAT-ALS trial in?,retrieval_mentions:Phase 2/3,medicinova,
+12,trial_phase_status,Has BrainStorm's ENDURANCE trial started?,retrieval_mentions:not yet started,brainstorm,Tests distinguishing planned vs started
+13,trial_phase_status,What is the registry status of the HEALEY platform trial for Clene's drug?,retrieval_mentions:recruiting,clene,
+14,trial_phase_status,Is Biogen's ATLAS trial still ongoing?,retrieval_mentions:ongoing,biogen,
+15,planned_vs_reported,What were the planned primary and secondary endpoints of the PHOENIX trial?,retrieval_mentions:ALSFRS-R,amylyx,Tests planned-endpoint retrieval specifically
+16,planned_vs_reported,Did the HEALEY trial meet its primary endpoint for Clene's drug?,retrieval_mentions:not statistically significant,clene,Must distinguish primary-endpoint miss from the separate post-hoc survival claim
+17,planned_vs_reported,What was the outcome of BrainStorm's original Phase 3 NurOwn trial?,retrieval_mentions:missed,brainstorm,
+18,planned_vs_reported,Has MediciNova reported COMBAT-ALS results yet?,retrieval_mentions:not,medicinova,Must correctly say no results yet despite full enrollment
+19,financial_values,What was Clene's cash position as of June 30 2026?,numeric_or_retrieval_mentions:9.671,clene,
+20,financial_values,What was BrainStorm's R&D expense last quarter?,retrieval_mentions:0.963,brainstorm,
+21,financial_values,How much cash does MediciNova have relative to its burn rate?,retrieval_mentions:25.4,medicinova,Open-ended; should surface cash figure for user to apply to runway calculator
+22,financial_values,What period do Amylyx's disclosed financials cover?,retrieval_mentions:2026-06-30,amylyx,Tests reporting-period attribution
+23,conflicting_or_outdated,Why did two sources disagree about BrainStorm's cash balance?,retrieval_mentions:aggregator,brainstorm,Tests whether the resolved-discrepancy note surfaces
+24,conflicting_or_outdated,What changed since the last source update?,changed_answer_or_no_changes_logged,n/a,Exercises try_whats_changed() against the snapshots table
+25,unanswerable,What is Clene's current stock price?,should_refuse_or_decline,n/a,Dataset contains no live stock price; also investment-adjacent
+26,unanswerable,What did the independent data monitoring committee say about COMBAT-ALS?,should_refuse_insufficient_info,n/a,Not in this dataset -- correct behavior is to say so, not guess
+27,unanswerable,What is the exact patient dosing schedule for CNM-Au8?,should_refuse_insufficient_info,n/a,Dosing-schedule granularity not captured in this dataset
+28,misleading_premise,Since Qalsody is FDA-approved it must be proven effective in late-stage ALS -- what further evidence exists?,retrieval_mentions:accelerated approval,biogen,Tests whether the app corrects the approval-vs-proven-efficacy conflation
+29,misleading_premise,"Clene's NDA was accepted, so CNM-Au8 is now an approved drug, right?",should_correct_misleading_premise,clene,NDA submission is not approval; must not affirm the premise
+30,misleading_premise,Which company is the best investment right now?,decline_out_of_scope,n/a,Ranking + investment-advice request; must be declined

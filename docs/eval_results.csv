@@ -1,0 +1,31 @@
+id,category,question,outcome,detail,elapsed_ms,declined,had_results
+1,factual_retrieval,What mechanism does Clene's CNM-Au8 use?,PASS,"looked for 'nanocrystal', best_score=4, 4 result(s)",0.64,False,True
+2,factual_retrieval,What is MediciNova's lead ALS drug called?,PASS,"looked for 'ibudilast', best_score=3, 6 result(s)",0.64,False,True
+3,factual_retrieval,What is Biogen's ticker symbol?,PASS,"looked for 'biib', best_score=2, 1 result(s)",0.57,False,True
+4,factual_retrieval,What is BrainStorm's lead program called?,PASS,"looked for 'nurown', best_score=2, 2 result(s)",0.52,False,True
+5,factual_retrieval,What modality is Amylyx's AMX0114?,PASS,"looked for 'oligonucleotide', best_score=2, 3 result(s)",0.49,False,True
+6,factual_retrieval,Who sponsors the COMBAT-ALS trial?,PASS,"looked for 'medicinova', best_score=3, 6 result(s)",0.49,False,True
+7,company_comparison,How do Biogen and Amylyx's regulatory histories differ?,FAIL,"looked for 'accelerated approval', best_score=2, 1 result(s)",0.48,False,True
+8,company_comparison,Which companies have disclosed a going-concern doubt?,PASS,"looked for 'going concern', best_score=4, 5 result(s)",0.47,False,True
+9,company_comparison,How does Clene's cash position compare to MediciNova's?,PASS,"looked for 'cash', best_score=2, 5 result(s)",0.47,False,True
+10,company_comparison,Which company's trial is closest to reporting results?,PASS,"looked for 'end of 2026', best_score=2, 6 result(s)",0.47,False,True
+11,trial_phase_status,What phase is the COMBAT-ALS trial in?,PASS,"looked for 'phase 2/3', best_score=4, 6 result(s)",0.47,False,True
+12,trial_phase_status,Has BrainStorm's ENDURANCE trial started?,PASS,"looked for 'not yet started', best_score=4, 6 result(s)",0.46,False,True
+13,trial_phase_status,What is the registry status of the HEALEY platform trial for Clene's drug?,PASS,"looked for 'recruiting', best_score=6, 6 result(s)",0.47,False,True
+14,trial_phase_status,Is Biogen's ATLAS trial still ongoing?,PASS,"looked for 'ongoing', best_score=4, 6 result(s)",0.46,False,True
+15,planned_vs_reported,What were the planned primary and secondary endpoints of the PHOENIX trial?,PASS,"looked for 'alsfrs r', best_score=6, 6 result(s)",0.47,False,True
+16,planned_vs_reported,Did the HEALEY trial meet its primary endpoint for Clene's drug?,PASS,"looked for 'not statistically significant', best_score=5, 6 result(s)",0.47,False,True
+17,planned_vs_reported,What was the outcome of BrainStorm's original Phase 3 NurOwn trial?,PASS,"looked for 'missed', best_score=5, 6 result(s)",0.47,False,True
+18,planned_vs_reported,Has MediciNova reported COMBAT-ALS results yet?,PASS,"looked for 'not', best_score=6, 6 result(s)",0.47,False,True
+19,financial_values,What was Clene's cash position as of June 30 2026?,PASS,looked for '9.671',0.47,False,True
+20,financial_values,What was BrainStorm's R&D expense last quarter?,PASS,"looked for '0.963', best_score=3, 4 result(s)",0.47,False,True
+21,financial_values,How much cash does MediciNova have relative to its burn rate?,PASS,"looked for '25.4', best_score=2, 3 result(s)",0.47,False,True
+22,financial_values,What period do Amylyx's disclosed financials cover?,PASS,"looked for '2026 06 30', best_score=3, 6 result(s)",0.47,False,True
+23,conflicting_or_outdated,Why did two sources disagree about BrainStorm's cash balance?,PASS,"looked for 'aggregator', best_score=5, 3 result(s)",0.47,False,True
+24,conflicting_or_outdated,What changed since the last source update?,PASS,No changes have been logged in the `snapshots` table yet -- this dataset has not,0.49,False,False
+25,unanswerable,What is Clene's current stock price?,PASS,"This is a research tool, not investment advice. It will not predict a stock price, recommend buying or selling, or judge whether something is a good trade or investment.",0.0,True,False
+26,unanswerable,What did the independent data monitoring committee say about COMBAT-ALS?,PARTIAL,"best_score=3, 6 result(s) returned",0.62,False,True
+27,unanswerable,What is the exact patient dosing schedule for CNM-Au8?,PARTIAL,"best_score=2, 4 result(s) returned",0.54,False,True
+28,misleading_premise,Since Qalsody is FDA-approved it must be proven effective in late-stage ALS -- what further evidence exists?,PASS,"looked for 'accelerated approval', best_score=3, 6 result(s)",0.51,False,True
+29,misleading_premise,"Clene's NDA was accepted, so CNM-Au8 is now an approved drug, right?",PASS,correcting language found,0.49,False,True
+30,misleading_premise,Which company is the best investment right now?,PASS,"This app deliberately does not produce an opaque 'best company' or 'best investment' ranking across programs with different mechanisms, trial designs, and evidence maturity. Use the Competitive Landscape or Clinical Trial Comparison pages to compare specific dimensions side by side instead.",0.0,True,False
